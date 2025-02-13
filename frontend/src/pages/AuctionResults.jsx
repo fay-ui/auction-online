@@ -9,7 +9,7 @@ const AuctionResults = () => {
     useEffect(() => {
         const fetchResults = async () => {
             try {
-                const response = await axios.get('/api/item');
+                const response = await axios.get('/item');
                 const closedItems = response.data.filter((item) => item.status === 'closed');
                 setItems(closedItems);
             } catch (err) {

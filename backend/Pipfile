@@ -10,6 +10,7 @@ flask = "*"
 flask-jwt-extended = "*"
 werkzeug = "*"
 apscheduler = "*"
+python-dotenv = "*"
 flask-cors = "*"
 
 [dev-packages]

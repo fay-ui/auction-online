@@ -38,7 +38,7 @@ export const BidProvider = ({ children }) => {
     // Withdraw a bid
     const withdrawBid = async (bidId) => {
         try {
-            await axios.delete(`/api/bids/${bidId}`);
+            await axios.delete(`/bids/${bidId}`);
             setBids((prevBids) => prevBids.filter((bid) => bid.bid_id !== bidId));
         } catch (err) {
             throw err;

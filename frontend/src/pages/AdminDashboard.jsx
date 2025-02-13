@@ -16,12 +16,12 @@ const AdminDashboard = () => {
     }, [user]);
 
     const fetchUsers = async () => {
-        const response = await axios.get('/api/user');
+        const response = await axios.get('/user');
         setUsers(response.data);
     };
 
     const fetchItems = async () => {
-        const response = await axios.get('/api/item');
+        const response = await axios.get('/item');
         setItems(response.data);
     };
 

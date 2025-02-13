@@ -10,7 +10,7 @@ const AuctionListing = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('/api/item');
+                const response = await axios.get('/item');
                 setItems(response.data);
             } catch (err) {
                 setError('Failed to fetch auction items.');

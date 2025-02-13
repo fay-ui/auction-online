@@ -1,15 +1,16 @@
 import React from 'react';
-import { useUser } from '../context/UserContext';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { useUser } from '../context/UserContext'; // Import the useUser hook
 
-const ProtectedRoute = () => {
-    const { isAuthenticated } = useUser();
+const ProtectedRoute = ({ element }) => {
+    const { isAuthenticated } = useUser(); // Access the authentication status
 
     if (!isAuthenticated) {
+        // If not authenticated, redirect to login page
         return <Navigate to="/login" />;
     }
 
-    return <Outlet />;
+    return element; // If authenticated, render the element (protected route)
 };
 
 export default ProtectedRoute;

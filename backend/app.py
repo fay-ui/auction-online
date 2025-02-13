@@ -1,35 +1,50 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
-from models import db, TokenBlocklist
 from datetime import timedelta
 import os
+from dotenv import load_dotenv
 
+# Load environment variables
+load_dotenv()
+
+# Initialize Flask app
 app = Flask(__name__)
 
-# ✅ Allow CORS for frontend requests
-CORS(app, supports_credentials=True, origins=["http://localhost:5173"])
+# CORS Configurat
+CORS(
+    app,
+    origins="http://localhost:5173",  # Your frontend URL
+    methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["Content-Type", "Authorization"],
+    supports_credentials=True  # If using cookies/sessions
+) # This allows all origins (useful for debugging)
 
-# ✅ Database & JWT setup
+# Database & JWT Setup
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///auction.db')
-app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'your_secret_key')  # Use environment variable
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'ytthghgvasthrdfdvdfjnsfffyjtf')  # Use environment variable
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
 
+# Initialize extensions
+from models import db
 db.init_app(app)
+
 jwt = JWTManager(app)
 migrate = Migrate(app, db)
 
-# ✅ Import & Register Blueprints
+# Import & Register Blueprints
 from views import auth_bp, user_bp, item_bp, bid_bp
-app.register_blueprint(auth_bp, url_prefix='/api/auth')
-app.register_blueprint(user_bp, url_prefix='/api/user')
-app.register_blueprint(item_bp, url_prefix='/api/item')
-app.register_blueprint(bid_bp, url_prefix='/api/bid')
+app.register_blueprint(auth_bp)
+app.register_blueprint(user_bp)
+app.register_blueprint(item_bp)
+app.register_blueprint(bid_bp)
 
-# ✅ Handle blocked JWTs (logout)
+# JWT Blocklist Check (Logout logic)
+from models import TokenBlocklist
+
 @jwt.token_in_blocklist_loader
-def check_if_token_in_blocklist(jwt_header, jwt_payload) -> bool:
+def check_if_token_in_blocklist(jwt_header, jwt_payload):
     jti = jwt_payload["jti"]
     token = db.session.query(TokenBlocklist).filter_by(jti=jti).scalar()
     return token is not None

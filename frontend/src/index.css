@@ -1,213 +1,213 @@
 .auction-logo {
-max-height: 100px;
-max-width: 100px;
-padding-right: 20px;
-
-}
-.navbar {
-  background-color: black !important;
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-}
-
-.navbar-brand, .nav-link {
-  color: #00ffcc !important; /* Bright cyan for high contrast */
-  text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8);
-  font-weight: bold;
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-.navbar-brand:hover, .nav-link:hover {
-  color: #ff66ff !important; /* Neon pink on hover */
-  text-shadow: 0px 0px 12px rgba(255, 102, 255, 0.9);
-}
-
-.auction-logo {
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-}
-.navbar-brand{
-  padding-right: 300px;
-}
-.navbar a {
-  color: #007bff; /* A visible blue color */
-  font-weight: bold; /* Makes it more readable */
-}
-
-.navbar a:hover {
-  color: #0056b3; /* Darker blue for hover effect */
-  text-decoration: underline; /* Highlights links on hover */
-}
-.auction-footer {
-  background: #111;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-/* footer */
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-container h2,
-.footer-container h3 {
-  color: cyan;
-}
-
-.footer-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-container ul li {
-  margin: 10px 0;
-}
-
-.footer-container ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-container ul li a:hover {
-  color: cyan;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-icons a {
-  color: cyan;
-  font-size: 24px;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: white;
-}
-
-.footer-bottom {
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid cyan;
-}
-=======================================================================================================================
-/* From Uiverse.io by alexruix */ 
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  margin: 0;
-  background: #f0f0f0; /* Optional: Background color */
-}
-
-.card {
-  --background: linear-gradient(to left, #180aae 0%, #131ad7 100%);
-  width: 320px;
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--background);
-  box-shadow: 0px 10px 20px rgba(174, 14, 14, 0.2);
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-info {
-  background: linear-gradient(black, #0217da);
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-}
-
-.card-info .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.form-label {
-  font-weight: bold;
-  color: #ddd;
-  text-align: left;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background: #252525;
-  color: white;
-  font-size: 1rem;
-}
-
-.form-control:focus {
-  outline: 2px solid #f7ba2b;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn-primary {
-  background: #2b4af7;
-  color: black;
-}
-
-.btn-primary:hover {
-  background: #ea5358;
-  color: white;
-}
-
-.toggle-text {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #f7ba2b;
-  cursor: pointer;
-}
-
-.toggle-text:hover {
-  text-decoration: underline;
-}
-.card{
-  margin-left: 500px;
-  margin-right: 490px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  max-height: 100px;
+  max-width: 100px;
+  padding-right: 20px;
   
-}
-
-.auction-img{
-  height: 50vh;
-  width : 50vh;
-  margin-left: 20px;
-}
-
+  }
+  .navbar {
+    background-color: black !important;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  .navbar-brand, .nav-link {
+    color: #00ffcc !important; /* Bright cyan for high contrast */
+    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  }
+  
+  .navbar-brand:hover, .nav-link:hover {
+    color: #ff66ff !important; /* Neon pink on hover */
+    text-shadow: 0px 0px 12px rgba(255, 102, 255, 0.9);
+  }
+  
+  .auction-logo {
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+  }
+  .navbar-brand{
+    padding-right: 300px;
+  }
+  .navbar a {
+    color: #007bff; /* A visible blue color */
+    font-weight: bold; /* Makes it more readable */
+  }
+  
+  .navbar a:hover {
+    color: #0056b3; /* Darker blue for hover effect */
+    text-decoration: underline; /* Highlights links on hover */
+  }
+  .auction-footer {
+    background: #111;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  /* footer */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-container h2,
+  .footer-container h3 {
+    color: cyan;
+  }
+  
+  .footer-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-container ul li {
+    margin: 10px 0;
+  }
+  
+  .footer-container ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-container ul li a:hover {
+    color: cyan;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: cyan;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: white;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid cyan;
+  }
+  =======================================================================================================================
+  /* From Uiverse.io by alexruix */ 
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background: #f0f0f0; /* Optional: Background color */
+  }
+  
+  .card {
+    --background: linear-gradient(to left, #180aae 0%, #131ad7 100%);
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--background);
+    box-shadow: 0px 10px 20px rgba(174, 14, 14, 0.2);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-info {
+    background: linear-gradient(black, #0217da);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+  }
+  
+  .card-info .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #ddd;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #252525;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    outline: 2px solid #f7ba2b;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary {
+    background: #2b4af7;
+    color: black;
+  }
+  
+  .btn-primary:hover {
+    background: #ea5358;
+    color: white;
+  }
+  
+  .toggle-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #f7ba2b;
+    cursor: pointer;
+  }
+  
+  .toggle-text:hover {
+    text-decoration: underline;
+  }
+  .card{
+    margin-left: 500px;
+    margin-right: 490px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+  }
+  
+  .auction-img{
+    height: 50vh;
+    width : 50vh;
+    margin-left: 20px;
+  }
+  

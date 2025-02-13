@@ -1,44 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUser } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Profile = () => {
     const { user, logout } = useUser();
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
+
     const [editMode, setEditMode] = useState(false);
-    const [name, setName] = useState(user.name);
-    const [email, setEmail] = useState(user.email);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const navigate = useNavigate();
 
-    // Handle account deletion
+    useEffect(() => {
+        if (user) {
+            setName(user.name);
+            setEmail(user.email);
+            setLoading(false);
+        } else {
+            setLoading(false);
+            navigate('/login');
+        }
+    }, [user, navigate]);
+
     const handleDeleteAccount = async () => {
         if (window.confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
             try {
-                await axios.delete(`http://localhost:5000/api/user/delete/${user.user_id}`, {
+                const response = await axios.delete(`http://localhost:5000/delete/${user.user_id}`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
                 });
-                logout();
-                navigate('/login');
+                if (response.status === 200) {
+                    logout();
+                    navigate('/login');
+                }
             } catch (err) {
                 setError('Failed to delete account. Please try again.');
             }
         }
     };
 
-    // Handle profile update
     const handleUpdateProfile = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.patch(`http://localhost:5000/api/user/update/${user.user_id}`, {
+            const response = await axios.patch(`http://localhost:5000/update/${user.user_id}`, {
                 name,
                 email,
                 password,
             }, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             });
+
             if (response.data.message) {
                 setSuccess('Profile updated successfully!');
                 setError('');
@@ -48,6 +62,10 @@ const Profile = () => {
             setError('Failed to update profile. Please try again.');
         }
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="container mt-5">

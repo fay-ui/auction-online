@@ -13,20 +13,29 @@ const AddAuction = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/item', {
+            const response = await axios.post('http://localhost:5000/item', {
                 title,
                 description,
                 starting_price: startingPrice,
                 auction_end_time: auctionEndTime,
+            }, {
+                withCredentials: true,  // Required for cookies/authentication
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
             });
+    
             if (response.data.item_id) {
                 navigate('/auction-listing');
             }
         } catch (err) {
             setError('Failed to create auction. Please try again.');
+            console.error("Axios error:", err);
         }
     };
-
+    
+    
     return (
         <div className="container mt-5">
             <h1 className="text-center mb-4">Add New Auction</h1>

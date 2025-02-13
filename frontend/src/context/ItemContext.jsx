@@ -23,7 +23,7 @@ export const ItemProvider = ({ children }) => {
     const fetchItems = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/item'); // ✅ Fixed URL
+            const response = await axios.get('http://localhost:5000/item'); // ✅ Fixed URL
             setItems(response.data);
             setError(null);
         } catch (err) {
@@ -36,7 +36,7 @@ export const ItemProvider = ({ children }) => {
     // Create a new item
     const createItem = async (itemData) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/item', itemData);
+            const response = await axios.post('http://localhost:5000/item', itemData);
             setItems((prevItems) => [...prevItems, response.data]);
             return response.data;
         } catch (err) {
@@ -47,7 +47,7 @@ export const ItemProvider = ({ children }) => {
     // Update an item
     const updateItem = async (itemId, updatedData) => {
         try {
-            const response = await axios.patch(`http://localhost:5000/api/item/${itemId}`, updatedData); // ✅ Fixed extra `'`
+            const response = await axios.patch(`http://localhost:5000/item/${itemId}`, updatedData); // ✅ Fixed extra `'`
             setItems((prevItems) =>
                 prevItems.map((item) =>
                     item.item_id === itemId ? response.data : item
@@ -62,7 +62,7 @@ export const ItemProvider = ({ children }) => {
     // Delete an item
     const deleteItem = async (itemId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/item/${itemId}`);
+            await axios.delete(`http://localhost:5000/item/${itemId}`);
             setItems((prevItems) =>
                 prevItems.filter((item) => item.item_id !== itemId)
             );

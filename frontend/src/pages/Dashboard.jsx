@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const fetchItems = async () => {
         try {
-            const response = await axios.get('/api/item');
+            const response = await axios.get('/item');
             console.log("API Response:", response.data); // Log the response
             if (Array.isArray(response.data)) {
                 setItems(response.data);
@@ -27,7 +27,7 @@ const Dashboard = () => {
     };
 
     const placeBid = async (itemId, bidAmount) => {
-        await axios.post(`/api/item/${itemId}/bid`, { bidAmount });
+        await axios.post(`/item/${itemId}/bid`, { bidAmount });
         fetchItems();
     };
 

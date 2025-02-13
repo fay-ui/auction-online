@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -11,7 +12,7 @@ const AuctionDetails = () => {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`/api/item/${itemId}`);
+                const response = await axios.get(`/item/${itemId}`);
                 setItem(response.data);
             } catch (err) {
                 setError('Failed to fetch auction details.');

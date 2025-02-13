@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -11,7 +12,7 @@ const PlaceBid = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`/api/item/${itemId}/bids`, { bidAmount });
+            const response = await axios.post(`/item/${itemId}/bids`, { bidAmount });
             if (response.data.bid_id) {
                 setSuccess('Bid placed successfully!');
                 setError('');

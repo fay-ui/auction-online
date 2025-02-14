@@ -20,8 +20,7 @@ To get started with the project locally:
 1. Clone the Repository
 bash
 Copy
-git clone https://github.com/yourusername/online-auction-house.git
-cd online-auction-house
+
 2. Set Up Backend
 Navigate to the backend/ directory.
 Install the required dependencies:
